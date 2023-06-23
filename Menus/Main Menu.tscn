@@ -1,0 +1,370 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Assets/QuitButton_Click.png" type="Texture" id=1]
+[ext_resource path="res://Assets/MainMenuTItle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/OptionsButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PlayButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/QuitButton.png" type="Texture" id=5]
+[ext_resource path="res://Assets/QuitButton_Hover.png" type="Texture" id=6]
+[ext_resource path="res://Assets/OptionsButton_Click.png" type="Texture" id=7]
+[ext_resource path="res://Assets/OptionsButton_Hover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PlayButton_Hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PlayButton_Click.png" type="Texture" id=10]
+[ext_resource path="res://Assets/mine.png" type="Texture" id=11]
+[ext_resource path="res://Assets/beehive.png" type="Texture" id=12]
+[ext_resource path="res://Assets/boot.png" type="Texture" id=13]
+[ext_resource path="res://Assets/fruit3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/fruit2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/fruit1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/left_arrow_hover.png" type="Texture" id=17]
+[ext_resource path="res://Menus/Font_For_Theme.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Assets/left_arrow.png" type="Texture" id=19]
+[ext_resource path="res://Menus/Options.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/left_arrow_click.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Acknowledgements_button_hover.png" type="Texture" id=22]
+[ext_resource path="res://Menus/Main Menu.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Acknowledgements_button.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Acknowledgements_button_click.png" type="Texture" id=25]
+[ext_resource path="res://Menus/Acknowledgements.tscn" type="PackedScene" id=26]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/digifit.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/digifit.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/digifit.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = SubResource( 5 )
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 23 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.631373, 0.631373, 0.631373, 1 )
+
+[node name="SlideShow" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FruitsPanel" type="Panel" parent="SlideShow"]
+margin_left = 512.0
+margin_top = 216.0
+margin_right = 960.0
+margin_bottom = 536.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlideShow/FruitsPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -96.0
+margin_right = 80.0
+margin_bottom = 96.0
+custom_constants/separation = 24
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="SlideShow/FruitsPanel/VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 16 )
+
+[node name="TextureRect2" type="TextureRect" parent="SlideShow/FruitsPanel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 48.0
+margin_bottom = 120.0
+texture = ExtResource( 15 )
+
+[node name="TextureRect3" type="TextureRect" parent="SlideShow/FruitsPanel/VBoxContainer"]
+margin_top = 144.0
+margin_right = 48.0
+margin_bottom = 192.0
+texture = ExtResource( 14 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SlideShow/FruitsPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 120.0
+margin_top = -96.0
+margin_right = 426.0
+margin_bottom = 96.0
+custom_constants/separation = 24
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="SlideShow/FruitsPanel/VBoxContainer2"]
+margin_right = 306.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+text = "Apple +50 pts"
+
+[node name="Label2" type="Label" parent="SlideShow/FruitsPanel/VBoxContainer2"]
+margin_top = 70.0
+margin_right = 306.0
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 2 )
+text = "Cherry +100 pts"
+
+[node name="Label3" type="Label" parent="SlideShow/FruitsPanel/VBoxContainer2"]
+margin_top = 140.0
+margin_right = 306.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 2 )
+text = "Banana +150 pts"
+
+[node name="NotFruitsPanel" type="Panel" parent="SlideShow"]
+margin_left = 960.0
+margin_top = 216.0
+margin_right = 1408.0
+margin_bottom = 536.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlideShow/NotFruitsPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -96.0
+margin_right = 80.0
+margin_bottom = 96.0
+custom_constants/separation = 24
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="SlideShow/NotFruitsPanel/VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+
+[node name="TextureRect2" type="TextureRect" parent="SlideShow/NotFruitsPanel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 48.0
+margin_bottom = 120.0
+texture = ExtResource( 13 )
+
+[node name="TextureRect3" type="TextureRect" parent="SlideShow/NotFruitsPanel/VBoxContainer"]
+margin_top = 144.0
+margin_right = 48.0
+margin_bottom = 192.0
+texture = ExtResource( 11 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SlideShow/NotFruitsPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 120.0
+margin_top = -96.0
+margin_right = 426.0
+margin_bottom = 96.0
+custom_constants/separation = 24
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="SlideShow/NotFruitsPanel/VBoxContainer2"]
+margin_right = 306.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+text = "Hive -55 pts"
+
+[node name="Label2" type="Label" parent="SlideShow/NotFruitsPanel/VBoxContainer2"]
+margin_top = 70.0
+margin_right = 306.0
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 2 )
+text = "Boot -110 pts"
+
+[node name="Label3" type="Label" parent="SlideShow/NotFruitsPanel/VBoxContainer2"]
+margin_top = 140.0
+margin_right = 306.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 2 )
+text = "Mine -165 pts"
+
+[node name="How To Play" type="Panel" parent="SlideShow"]
+margin_left = 1408.0
+margin_top = 216.0
+margin_right = 1856.0
+margin_bottom = 536.0
+
+[node name="Label" type="Label" parent="SlideShow/How To Play"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 313.0
+custom_fonts/font = SubResource( 4 )
+text = "How To Play:
+
+Use \"A\" and \"D\" or left and right arrow
+to move the basket.
+
+Collect as many fruits as possible
+to get a high score!
+
+Collect Bonus time points to extend
+your time to keep playing!
+"
+align = 1
+
+[node name="HighScore" type="Panel" parent="SlideShow"]
+margin_left = 1856.0
+margin_top = 216.0
+margin_right = 2304.0
+margin_bottom = 536.0
+
+[node name="TitleLabel" type="Label" parent="SlideShow/HighScore"]
+margin_left = 32.0
+margin_right = 442.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 18 )
+text = "HIGH SCORES "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlideShow/HighScore"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 281.0
+margin_bottom = 297.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ScoreLabel0" type="Label" parent="SlideShow/HighScore/VBoxContainer"]
+margin_right = 415.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 6 )
+text = "NIM-------------------5000"
+
+[node name="ScoreLabel1" type="Label" parent="SlideShow/HighScore/VBoxContainer"]
+margin_top = 41.0
+margin_right = 415.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 6 )
+text = "NIM-------------------5000"
+
+[node name="ScoreLabel2" type="Label" parent="SlideShow/HighScore/VBoxContainer"]
+margin_top = 82.0
+margin_right = 415.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 6 )
+text = "NIM-------------------5000"
+
+[node name="ScoreLabel3" type="Label" parent="SlideShow/HighScore/VBoxContainer"]
+margin_top = 123.0
+margin_right = 415.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 6 )
+text = "NIM-------------------5000"
+
+[node name="ScoreLabel4" type="Label" parent="SlideShow/HighScore/VBoxContainer"]
+margin_top = 164.0
+margin_right = 415.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 6 )
+text = "NIM-------------------5000"
+
+[node name="MenuTitle" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 960.0
+margin_top = 216.0
+margin_bottom = -64.0
+color = Color( 0.631373, 0.631373, 0.631373, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 216.0
+margin_right = -512.0
+margin_bottom = -64.0
+color = Color( 0.631373, 0.631373, 0.631373, 1 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.008
+anchor_right = 0.008
+margin_left = 95.808
+margin_top = 232.0
+margin_right = 375.808
+margin_bottom = 504.0
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="Buttons"]
+margin_top = 41.0
+margin_right = 280.0
+margin_bottom = 88.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+
+[node name="OptionsButton" type="TextureButton" parent="Buttons"]
+margin_top = 92.0
+margin_right = 280.0
+margin_bottom = 140.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+
+[node name="AckButton" type="TextureButton" parent="Buttons"]
+margin_top = 144.0
+margin_right = 280.0
+margin_bottom = 183.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 22 )
+
+[node name="QuitButton" type="TextureButton" parent="Buttons"]
+margin_top = 187.0
+margin_right = 280.0
+margin_bottom = 231.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 6 )
+
+[node name="LeftArrow" type="TextureButton" parent="."]
+margin_left = 448.0
+margin_top = 320.0
+margin_right = 512.0
+margin_bottom = 448.0
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 21 )
+texture_hover = ExtResource( 17 )
+
+[node name="SlideShowTween" type="Tween" parent="."]
+
+[node name="Options" parent="." instance=ExtResource( 20 )]
+visible = false
+
+[node name="Acknowledgements" parent="." instance=ExtResource( 26 )]
+visible = false
+
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Buttons/AckButton" to="." method="_on_AckButton_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="LeftArrow" to="." method="_on_LeftArrow_pressed"]
+[connection signal="tween_all_completed" from="SlideShowTween" to="." method="_on_SlideShowTween_tween_all_completed"]

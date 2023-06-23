@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Shaders/ElectronicWaves.gdshader" type="Shader" id=1]
+[ext_resource path="res://Background.gd" type="Script" id=3]
+[ext_resource path="res://Assets/background_default.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/background_color = Color( 0, 0, 0, 1 )
+shader_param/line_color = Color( 0, 1, 1, 1 )
+shader_param/line_freq = 9.56
+shader_param/height = 0.6
+shader_param/speed = 0.8
+shader_param/scale = Vector2( 2, 16 )
+
+[sub_resource type="ShaderMaterial" id=4]
+
+[node name="Background" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Background0" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Background1" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0, 0.521569, 1 )
+
+[node name="Background2" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0, 0.521569, 1 )

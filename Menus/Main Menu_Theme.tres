@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/digifit.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[resource]
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/Font1 = SubResource( 6 )
+Label/styles/normal = null

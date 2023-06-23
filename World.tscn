@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Basket.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FruitSpawning.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World.gd" type="Script" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/HomeButton_click.png" type="Texture" id=5]
+[ext_resource path="res://Assets/HomeButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/HomeButton_hover.png" type="Texture" id=7]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/digifit.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = SubResource( 1 )
+
+[node name="World" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." instance=ExtResource( 8 )]
+
+[node name="FruitSpawning" parent="." instance=ExtResource( 2 )]
+
+[node name="Basket" parent="." instance=ExtResource( 1 )]
+position = Vector2( 504, 560 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="TimeTimer" type="Timer" parent="."]
+
+[node name="Countdown" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -984.0
+margin_bottom = -560.0
+
+[node name="CountdownTimer" type="Timer" parent="Countdown"]
+
+[node name="ColorRect" type="ColorRect" parent="Countdown"]
+anchor_right = 26.0
+anchor_bottom = 15.0
+margin_right = -0.00012207
+margin_bottom = -6.10352e-05
+color = Color( 0.160784, 0.160784, 0.160784, 0.466667 )
+
+[node name="Label" type="Label" parent="Countdown/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -37.5
+margin_right = 20.0
+margin_bottom = 37.5
+custom_fonts/font = SubResource( 2 )
+text = "3"
+align = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0.541176 )
+anchor_bottom = 0.111
+margin_left = 24.0
+margin_top = 528.0
+margin_right = 72.0
+margin_bottom = 508.4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[connection signal="timeout" from="TimeTimer" to="." method="_on_TimeTimer_timeout"]
+[connection signal="timeout" from="Countdown/CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

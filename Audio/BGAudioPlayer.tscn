@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Audio/BGAudioPlayer.gd" type="Script" id=1]
+
+[node name="BGAudioStreamPlayer" type="AudioStreamPlayer"]
+volume_db = -20.991
+bus = "Music"
+script = ExtResource( 1 )

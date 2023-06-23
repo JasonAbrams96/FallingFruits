@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fruit.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[node name="Fruit" type="RigidBody2D" groups=["item", "item_good"]]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, 1.90735e-06 )
+scale = Vector2( 3.2, 3.2 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
