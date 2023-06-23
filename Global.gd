@@ -55,8 +55,8 @@ var meta_data = {
 	"volume_master" : 1,
 	"volume_music" : 1,
 	"volume_sfx" : 1,
-	"over_5000" : true,
-	"over_9000" : true
+	"over_5000" : false,
+	"over_9000" : false
 }
 
 func _ready():
